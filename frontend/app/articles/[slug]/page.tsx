@@ -1,3 +1,5 @@
+export const dynamic = 'force-dynamic'
+
 import { api } from '@/lib/api'
 import { notFound } from 'next/navigation'
 import type { Metadata } from 'next'

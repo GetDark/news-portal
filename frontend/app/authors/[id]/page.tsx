@@ -1,3 +1,5 @@
+export const dynamic = 'force-dynamic'
+
 import { api } from '@/lib/api'
 import ArticleCard from '@/components/ArticleCard'
 import Image from 'next/image'
