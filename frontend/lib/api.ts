@@ -1,4 +1,7 @@
-const API = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8006'
+// Server-side SSR uses internal Docker hostname; client-side uses public URL
+const API = typeof window === 'undefined'
+  ? (process.env.BACKEND_URL || 'http://backend:8000')
+  : (process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8006')
 
 async function apiFetch<T>(path: string, options?: RequestInit & { next?: { revalidate?: number } }): Promise<T> {
   const res = await fetch(`${API}${path}`, options)

@@ -10,6 +10,7 @@ services:
       - backend
     environment:
       - NEXT_PUBLIC_API_URL=https://news.swiftstream.ru
+      - BACKEND_URL=http://backend:8000
 
   backend:
     build: ./backend
